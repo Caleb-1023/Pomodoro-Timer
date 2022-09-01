@@ -20,7 +20,7 @@ const MyTimer = ({expiriyTimestamp}) => {
       <Button colorScheme='red' onClick={pause}>Stop</Button>
       <Button colorScheme='blue' onClick={() => {
         const time = new Date()
-        time.setSeconds(time.getSeconds() + 300);
+        time.setSeconds(time.getSeconds() + 1500);
         restart(time)
       }}>
         Restart
