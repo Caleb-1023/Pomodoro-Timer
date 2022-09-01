@@ -7,8 +7,8 @@ const MyTimer = ({expiriyTimestamp}) => {
   return(
     <Box bg='gray.200' p='3' alignItems='center' mt='3' style={{width: '500px', height: '300px'}}>
 
-    <Center style={{ fontSize: '100px', alignItems: 'center' }}>
-      <span>{minutes}</span>:<span>{seconds}</span>
+    <Center color='gray.700' style={{ fontSize: '100px', fontWeight: '600', alignItems: 'center' }}>
+      <Box as='span'>{minutes}</Box>:<Box as='span'>{seconds}</Box>
     </Center>
 
     <Box textAlign='center' py='3'>
