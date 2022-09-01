@@ -1,15 +1,20 @@
 import React from "react";
 import { useTimer } from 'react-timer-hook';
-import { Button, Container, Flex } from '@chakra-ui/react'
+import { Button, Box, Container, Flex, Text, Center } from '@chakra-ui/react'
 
 const MyTimer = ({expiriyTimestamp}) => {
   const { seconds,minutes,isRunning,start,pause,restart} = useTimer({expiriyTimestamp, onExpire: () => console.warn('onExpire called')});
   return(
-    <>
-    <div style={{ fontSize: '100px' }}>
+    <Box bg='gray.200' p='3' alignItems='center' mt='3'>
+
+    <Center style={{ fontSize: '100px', alignItems: 'center' }}>
       <span>{minutes}</span>:<span>{seconds}</span>
-    </div>
-    <p>{isRunning ? 'Running' : 'Not running'}</p>
+    </Center>
+
+    <Box textAlign='center' py='3'>
+    <Text>{isRunning ? 'Running' : 'Not running'}</Text>
+    </Box>
+
     <Flex gap='3'> 
       <Button colorScheme='green' onClick={start}>Start</Button>
       <Button colorScheme='red' onClick={pause}>Stop</Button>
@@ -17,9 +22,12 @@ const MyTimer = ({expiriyTimestamp}) => {
         const time = new Date()
         time.setSeconds(time.getSeconds() + 300);
         restart(time)
-      }}>Restart</Button>
+      }}>
+        Restart
+      </Button>
     </Flex>
-    </>
+
+    </Box>
   )
 }
 
