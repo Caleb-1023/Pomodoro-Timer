@@ -5,7 +5,7 @@ import { Button, Box, Container, Flex, Text, Center } from '@chakra-ui/react'
 const MyTimer = ({expiriyTimestamp}) => {
   const { seconds,minutes,isRunning,start,pause,restart} = useTimer({expiriyTimestamp, onExpire: () => console.warn('onExpire called')});
   return(
-    <Box bg='gray.200' p='3' alignItems='center' mt='3'>
+    <Box bg='gray.200' p='3' alignItems='center' mt='3' style={{width: '500px', height: '300px'}}>
 
     <Center style={{ fontSize: '100px', alignItems: 'center' }}>
       <span>{minutes}</span>:<span>{seconds}</span>
@@ -15,7 +15,7 @@ const MyTimer = ({expiriyTimestamp}) => {
     <Text>{isRunning ? 'Running' : 'Not running'}</Text>
     </Box>
 
-    <Flex gap='3'> 
+    <Flex gap='3' justify='center'> 
       <Button colorScheme='green' onClick={start}>Start</Button>
       <Button colorScheme='red' onClick={pause}>Stop</Button>
       <Button colorScheme='blue' onClick={() => {
