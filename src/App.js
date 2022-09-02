@@ -1,11 +1,14 @@
 import React, {useState} from "react";
 import { Container, Tabs, Tab, TabList, TabPanels, TabPanel, Box, Center, useColorModeValue } from "@chakra-ui/react";
 import {Pomodoro, ShortBreak, LongBreak} from "./components/Timers/Timers";
-import {Helmet} from 'react-helmet'
+import {Helmet, HelmetProvider} from 'react-helmet-async'
+
 const MyTimer = ({bg, setTabIndex}) => {
-  // console.log(tabIndex);
+  const time = new Date();
+  time.setSeconds(time.getSeconds() + 600);
+
   return(
-    <Box alignItems='center' mt='3' p='3' bg={bg} style={{ width: '500px', height: '300px' }}>
+    <Box alignItems='center' mt='3' p='3' bg={bg} style={{ width: '500px', height: '300px' }} borderRadius='lg'>
       <Center>
         <Tabs onChange={(index) => setTabIndex(index)}>
         <TabList>
@@ -16,13 +19,13 @@ const MyTimer = ({bg, setTabIndex}) => {
 
         <TabPanels>
           <TabPanel>
-            <Pomodoro />
+            <Pomodoro expiriyTimestamp={time}/>
           </TabPanel>
           <TabPanel>
-            <ShortBreak />
+            <ShortBreak expiriyTimestamp={time}/>
           </TabPanel>
           <TabPanel>
-          <LongBreak />
+          <LongBreak expiriyTimestamp={time}/>
           </TabPanel>
         </TabPanels>
       </Tabs>
@@ -33,7 +36,7 @@ const MyTimer = ({bg, setTabIndex}) => {
 
 const App = () => {
   const colors = useColorModeValue(
-    ['red.200', 'teal.200', 'blue.200'],
+    ['red.300', 'teal.300', 'blue.300'],
     ['red.900', 'teal.900', 'blue.900'],
   )
   const bgColors = useColorModeValue(
@@ -44,11 +47,14 @@ const App = () => {
   const bg = colors[tabIndex]
   const bodyBg = bgColors[tabIndex]
 
+
   return (
     <Container centerContent='true'>
+      <HelmetProvider>
       <Helmet>
         <style>{`body {background-color:${bodyBg};}`}</style>
       </Helmet>
+      </HelmetProvider>
       <MyTimer bg={bg} setTabIndex={setTabIndex}/>
     </Container>
   )
