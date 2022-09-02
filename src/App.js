@@ -8,7 +8,7 @@ const MyTimer = ({bg, setTabIndex}) => {
   time.setSeconds(time.getSeconds() + 600);
 
   return(
-    <Box alignItems='center' mt='3' p='3' bg={bg} style={{ width: '500px', height: '300px' }} borderRadius='lg'>
+    <Box alignItems='center' mt='3' p='3' bg={bg} style={{ width: '700px', height: '300px' }} borderRadius='lg'>
       <Center>
         <Tabs onChange={(index) => setTabIndex(index)}>
         <TabList>
