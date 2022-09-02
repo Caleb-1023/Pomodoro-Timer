@@ -13,9 +13,9 @@ export const Pomodoro = ({expiriyTimestamp}) => {
           </Center>
 
           <Flex gap='3' justify='center'>
-              <Button colorScheme='green' onClick={start}>Continue</Button>
-              <Button colorScheme='red' onClick={pause}>Stop</Button>
-              <Button colorScheme='blue' onClick={() => {
+              <Button bg='gray.200' onClick={start}>Continue</Button>
+              <Button bg='gray.200' onClick={pause}>Stop</Button>
+              <Button bg='gray.200' onClick={() => {
                   const time = new Date()
                   time.setSeconds(time.getSeconds() + 1500);
                   restart(time)
@@ -38,9 +38,9 @@ export const ShortBreak = ({ expiriyTimestamp }) => {
             </Center>
 
             <Flex gap='3' justify='center'>
-                <Button colorScheme='green' onClick={start}>Continue</Button>
-                <Button colorScheme='red' onClick={pause}>Stop</Button>
-                <Button colorScheme='blue' onClick={() => {
+                <Button bg='gray.200' onClick={start}>Continue</Button>
+                <Button bg='gray.200' onClick={pause}>Stop</Button>
+                <Button bg='gray.200' onClick={() => {
                     const time = new Date()
                     time.setSeconds(time.getSeconds() + 300);
                     restart(time)
@@ -63,9 +63,9 @@ export const LongBreak = ({ expiriyTimestamp }) => {
             </Center>
 
             <Flex gap='3' justify='center'>
-                <Button colorScheme='green' onClick={start}>Continue</Button>
-                <Button colorScheme='red' onClick={pause}>Stop</Button>
-                <Button colorScheme='blue' onClick={() => {
+                <Button bg='gray.200' onClick={start}>Continue</Button>
+                <Button bg='gray.200' onClick={pause}>Stop</Button>
+                <Button bg='gray.200' onClick={() => {
                     const time = new Date()
                     time.setSeconds(time.getSeconds() + 900);
                     restart(time)
