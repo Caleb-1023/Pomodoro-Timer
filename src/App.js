@@ -10,7 +10,7 @@ const MyTimer = ({bg, setTabIndex}) => {
   return(
     <Box alignItems='center' mt='3' p='3' bg={bg} style={{ width: '700px', height: '300px' }} borderRadius='lg'>
       <Center>
-        <Tabs onChange={(index) => setTabIndex(index)}>
+        <Tabs onChange={(index) => setTabIndex(index)} variant='soft-rounded'>
         <TabList>
           <Tab>Pomodoro</Tab>
           <Tab>Short Break</Tab>
