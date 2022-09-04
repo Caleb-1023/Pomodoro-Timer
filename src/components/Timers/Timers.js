@@ -4,7 +4,7 @@ import { useTimer } from 'react-timer-hook';
 
 
 export const Pomodoro = ({expiriyTimestamp}) => {
-    const { seconds, minutes, start, pause, restart } = useTimer({ expiriyTimestamp, onExpire: () => console.warn('onExpire called') });
+    const { seconds, minutes, pause, restart } = useTimer({ expiriyTimestamp, onExpire: () => console.warn('onExpire called') });
   return (
       <Box >
 
@@ -13,8 +13,6 @@ export const Pomodoro = ({expiriyTimestamp}) => {
           </Center>
 
           <Flex gap='3' justify='center'>
-              <Button bg='gray.200' onClick={start}>Continue</Button>
-              <Button bg='gray.200' onClick={pause}>Stop</Button>
               <Button bg='gray.200' onClick={() => {
                   const time = new Date()
                   time.setSeconds(time.getSeconds() + 1500);
@@ -22,6 +20,7 @@ export const Pomodoro = ({expiriyTimestamp}) => {
               }}>
                   Start
               </Button>
+              <Button bg='gray.200' onClick={pause}>End</Button>
           </Flex>
 
       </Box>
@@ -29,7 +28,7 @@ export const Pomodoro = ({expiriyTimestamp}) => {
 }
 
 export const ShortBreak = ({ expiriyTimestamp }) => {
-    const { seconds, minutes, start, pause, restart } = useTimer({ expiriyTimestamp, onExpire: () => console.warn('onExpire called') });
+    const { seconds, minutes, pause, restart } = useTimer({ expiriyTimestamp, onExpire: () => console.warn('onExpire called') });
     return (
         <Box >
 
@@ -38,8 +37,6 @@ export const ShortBreak = ({ expiriyTimestamp }) => {
             </Center>
 
             <Flex gap='3' justify='center'>
-                <Button bg='gray.200' onClick={start}>Continue</Button>
-                <Button bg='gray.200' onClick={pause}>Stop</Button>
                 <Button bg='gray.200' onClick={() => {
                     const time = new Date()
                     time.setSeconds(time.getSeconds() + 300);
@@ -47,6 +44,7 @@ export const ShortBreak = ({ expiriyTimestamp }) => {
                 }}>
                     Start
                 </Button>
+                <Button bg='gray.200' onClick={pause}>End</Button>
             </Flex>
 
         </Box>
@@ -54,7 +52,7 @@ export const ShortBreak = ({ expiriyTimestamp }) => {
 }
 
 export const LongBreak = ({ expiriyTimestamp }) => {
-    const { seconds, minutes, start, pause, restart } = useTimer({ expiriyTimestamp, onExpire: () => console.warn('onExpire called') });
+    const { seconds, minutes, pause, restart } = useTimer({ expiriyTimestamp, onExpire: () => console.warn('onExpire called') });
     return (
         <Box >
 
@@ -63,8 +61,6 @@ export const LongBreak = ({ expiriyTimestamp }) => {
             </Center>
 
             <Flex gap='3' justify='center'>
-                <Button bg='gray.200' onClick={start}>Continue</Button>
-                <Button bg='gray.200' onClick={pause}>Stop</Button>
                 <Button bg='gray.200' onClick={() => {
                     const time = new Date()
                     time.setSeconds(time.getSeconds() + 900);
@@ -72,6 +68,7 @@ export const LongBreak = ({ expiriyTimestamp }) => {
                 }}>
                     Start
                 </Button>
+                <Button bg='gray.200' onClick={pause}>End</Button>
             </Flex>
 
         </Box>
